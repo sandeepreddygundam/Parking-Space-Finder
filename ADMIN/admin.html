@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Easy Park</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <style>
+      .navbar {
+    border-radius: 0px;
+}
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img src="images/logo.webp"  style="height:60px;margin-top:10px"/>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li  style="padding-top:15px"><a href="index.php">Home</a></li>
+     <li style="padding-top:15px"><a href="about.html">About</a></li>
+      <li style="padding-top:15px"><a href="help.html">Help</a></li>
+      <li style="padding-top:15px"><a href="how.html">How It Works</a></li>
+      <li style="padding-top:15px"><a href="contact.html">Contact</a></li>
+      <li class="active" ><a href="login.html"><button class="btn btn-danger navbar-btn"><span class="glyphicon glyphicon-log-in"></span> Login</button></a></li>
+      <li><a href="register.html"><button class="btn btn-danger navbar-btn"><span class="glyphicon glyphicon-user"></span> Sign Up</button></a></li>
+    </ul>
+    
+    
+    
+  </div>
+</nav>
+  
+<div class="container">
+  <div class="row">
+      
+      <div class="col-md-4">
+          
+      </div>
+    <div class="col-md-4">
+          <div class="jumbotron">
+						
+						<div class="title-text">
+							<h3>Admin Account</h3>
+						</div>
+					  <form method="POST" action="admin.php">
+					      
+					      <div class="form-group">
+                            <label for="uname">Email</label>
+                            <!-- Username -->
+							<input class="form-control main" type="text" placeholder="Username" name="uname" required>
+                          </div>
+                          
+                           <div class="form-group">
+                            <label for="pwd">Password</label>
+                          <!-- Password -->
+							<input class="form-control main" type="password" placeholder="Password" name="pass" required>
+                          </div>
+                           <div class="form-group">
+                               
+							<!-- Submit Button -->
+							<button class="btn btn-default">sign in</button>
+                               
+                           </div>
+							
+							
+						</form>
+						
+						
+						<div class="new-acount">
+						    <a href="login.html">Customer Login</a>
+						</div>
+					</div>
+      </div>
+        <div class="col-md-4">
+          
+      </div>
+      
+  </div>
+</div>
+
+</body>
+</html>
