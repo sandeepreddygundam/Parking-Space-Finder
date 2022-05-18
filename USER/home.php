@@ -49,6 +49,7 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li class="active" style="padding-top:15px"><a href="home.php">Home</a></li>
+      <li  style="padding-top:15px"><a href="lcontact.html">Contact</a></li>
       <li style="padding-top:15px"><a href="parking.php">Parking</a></li>
       <li style="padding-top:15px"><a href="mybookings.php">My Bookings</a></li>
       <li style="padding-top:15px"><a href="myprofile.php">Profile</a></li>
@@ -169,24 +170,25 @@ width: 100%; background-repeat: no-repeat;
                               
                               
                                <div class="col-md-3">
-                               
+                                <a style="text-align:center" href="viewsublocations.php?id='. $row['lid'] .'">
                                <div class="jumbotron">
                                
                 
-                                   <a style="text-align:center" href="viewsublocations.php?id='. $row['lid'] .'">
+                                  
                                    <img src="' . $row["image"] . '"  style="width:100%;height:300px" />
                                     
-                                  </a>
+                                 
                                     
                                     <h3 style="text-align:left">
                                     
-                                     <a style="text-align:left" href="#">' . $row["name"] . '</a>
+                                     <a style="text-align:left" href="viewsublocations.php?id='. $row['lid'] .'">' . $row["name"] . '</a>
                                
                                     </h3>
                                     
                                   
                                    
                                 </div>
+                                 </a>
                               </div>
                                 
                             
@@ -205,5 +207,65 @@ width: 100%; background-repeat: no-repeat;
  
 </div>
 
+<div class="container-fluid" style="background-color:#f7f7f7">
+    <div class="row" style="margin-top:70px;margin-bottom:50px">
+        <div class="col-md-1">
+            
+           
+        </div>
+        
+         <div class="col-md-4">
+             
+             
+              <img src="images/loggg.jpeg"  style="height:40px"/>
+              <br/>
+              <br/>
+            
+            <p style="text-align:justify">
+            The parking experience of the future will offer absolute ease of access, autonomy and multiple options for drivers to select the service that really meets their needs, thus relieving the stress of parking. Tested on traffic sites and in all types of urban environments, Easypark is able to offer all of this, optimizing parking performance and profitability.
+                
+            </p>
+             
+           
+            
+        </div>
+        
+         <div class="col-md-3" style="padding-left:50px">
+             
+               <h3>Quick Links</h3>
+             <hr/>
+             
+             <a href="about.html">About Us</a>
+             <br/>  <br/>
+             <a href="register.html">Sign Up</a>
+              <br/>  <br/>
+             <a href="login.html">Log In</a>
+              <br/>  <br/>
+             <a href="help.html">Help Center</a>
+            
+        </div>
+        <div class="col-md-3" style="padding-left:50px">
+             
+               <h3>Contact with us</h3>
+             <hr/>
+             
+           
+                
+                <span class="glyphicon glyphicon-map-marker"></span> &nbsp; montreal, quebec -400104 <br>  <br/>
+                
+                <span class="glyphicon glyphicon-envelope"></span> &nbsp; easypark@gmail.com <br>
+                  <br/>
+                <span class="glyphicon glyphicon-earphone"></span> &nbsp; +438-456-7890 <br>  <br/>
+                
+                 
+            
+        </div>
+            <div class="col-md-1">
+            
+        </div>
+        
+    </div>
+    
+</div>
 </body>
 </html>
