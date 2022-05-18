@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
   //   echo "Error: " . $sql . "<br>" . $conn->error;
   header('Location:adminhome.php');
 } else {
-  echo "<script>alert('Invalid Details');document.location='index.html'</script>";
+  echo "<script>alert('Invalid Details');document.location='admin.html'</script>";
 }
 $conn->close();
 ?>
