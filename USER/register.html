@@ -60,26 +60,37 @@
 							<div class="form-group">
                             <label for="email">Email</label>
 							<!-- Email -->
-							<input class="form-control main" type="email" placeholder="Email" name="email" required>
+							<input class="form-control main" type="email" placeholder="Email" name="email" 
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              title="Must contain in the format abc@xyz.com" required>
 							</div>
 							<div class="form-group">
                             <label for="phone">Phone</label>
 								<!-- Phone -->
-							<input class="form-control main" type="number" placeholder="Phone" name="phone" required>
+							<input class="form-control main" type="tel" placeholder="Phone" name="phone"
+               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+               title="Must contain numbers in format (123-123-1234)"required>
 							</div>
+              
 							<div class="form-group">
                             <label for="pass">Password</label>
 							<!-- Password -->
-							<input class="form-control main" type="password" placeholder="Password" name="pass" required>
-							</div>
-							
+							<input type="password" class="form-control" placeholder="Password" id="pass" name="pass" 
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                <label for="pass">Confirm Password</label>
+                <!-- Password -->
+                <input type="password" class="form-control" placeholder="Password" id="cpass" name="cpass" 
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+              </div>
 							<div class="form-group">
                             <label for="qus">Security Question</label>
 					
 							<Select class="form-control main" name="qus">
-							    <option value="What is maiden name?">What is maiden name?</option>
-							      <option value="What is first school name?">What is first school name?</option>
-							      <option value="What is favorite car?">What is favorite car?</option>
+                <option value="What is your nick name?">What is your nick name?</option>
+                <option value="What is your dog name?">What is your dog name?</option>
+                <option value="What is your mother's name?">What is your mother's name?</option>
 							</Select>
 							</div>
 							<div class="form-group">
@@ -110,5 +121,65 @@
   </div>
 </div>
 
+<div class="container-fluid" style="background-color:#f7f7f7">
+    <div class="row" style="margin-top:70px;margin-bottom:50px">
+        <div class="col-md-1">
+            
+           
+        </div>
+        
+         <div class="col-md-4">
+             
+             
+              <img src="images/loggg.jpeg"  style="height:40px"/>
+              <br/>
+              <br/>
+            
+            <p style="text-align:justify">
+              The parking experience of the future will offer absolute ease of access, autonomy and multiple options for drivers to select the service that really meets their needs, thus relieving the stress of parking. Tested on traffic sites and in all types of urban environments, Easypark is able to offer all of this, optimizing parking performance and profitability.
+                
+            </p>
+             
+           
+            
+        </div>
+        
+         <div class="col-md-3" style="padding-left:50px">
+             
+               <h3>Quick Links</h3>
+             <hr/>
+             
+             <a href="about.html">About Us</a>
+             <br/>  <br/>
+             <a href="register.html">Sign Up</a>
+              <br/>  <br/>
+             <a href="login.html">Log In</a>
+              <br/>  <br/>
+             <a href="help.html">Help Center</a>
+            
+        </div>
+        <div class="col-md-3" style="padding-left:50px">
+             
+               <h3>Contact with us</h3>
+             <hr/>
+             
+           
+                
+                <span class="glyphicon glyphicon-map-marker"></span> &nbsp; montreal, quebec -400104 <br>  <br/>
+                
+                <span class="glyphicon glyphicon-envelope"></span> &nbsp; easypark@gmail.com <br>
+                  <br/>
+                <span class="glyphicon glyphicon-earphone"></span> &nbsp; +438-456-7890 <br>  <br/>
+                
+                 
+            
+        </div>
+            <div class="col-md-1">
+            
+        </div>
+        
+    </div>
+    
+</div>
 </body>
 </html>
