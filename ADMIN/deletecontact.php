@@ -14,3 +14,4 @@ header('location:viewcontacts.php');
 } else{
 echo "<script>alert('Cannot Detele This Location');document.location='adminhome.php'</script>";}
 ?>
+
