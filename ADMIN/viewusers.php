@@ -119,7 +119,7 @@
                                  <td> " . $row['qus'] . "</td>
                                  <td> " . $row['answer'] . "</td>
                                 <td> " . $row['status'] . "</td>
-                                 <td> <a href='action.php?id=" . $row['uid'] . "&status=" . $row['status'] . "'>Take a Action</a></td>
+                                 <td> <a href='action.php?id=" . $row['uid'] . "&status=" . $row['status'] . "'>Action</a></td>
                             
                                 
                                 </tr> ";
