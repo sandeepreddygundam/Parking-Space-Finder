@@ -8,9 +8,11 @@ $pass = $_GET['pass'];
 
 $qus = $_GET['qus'];
 $ans = $_GET['answer'];
+$cpass = $_POST['cpass'];
 
 
-
+if($cpass == $pass)
+{
 $con=mysqli_connect($hostname, $username, $password,$dbname);
 mysqli_query ($con,"set character_set_results='utf8'");
 $query_json = "SELECT * from user where email='$email' and qus='$qus' and answer='$ans'";
@@ -31,4 +33,7 @@ mysqli_close($con);
       echo '<script> alert("Incorrect Details please try again")</script>';
       echo "<script type='text/javascript'> document.location = 'forgot.html';</script>";
 }
+}else {
+      echo "<script>alert('Your password and confirmation password do not match.');document.location='forgot.html'</script>";
+  }
 ?>
