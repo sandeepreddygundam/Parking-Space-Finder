@@ -92,15 +92,33 @@ width: 100%; background-repeat: no-repeat;
             
              <div class="jumbotron" style="padding:20px">
           
+           
+                           <input id="pid" name="pid" type="text" value="<?php echo $_GET['id']; ?>" hidden >
+           <?php
+                include 'config.php';
+                session_start();
+
+                $email = $_SESSION["email"];
+
+                //  echo  $email;
+
+
+
+                $sql = "SELECT * FROM user where email='$email'";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        echo '
         
                    
                     <div class="form-group row">
 
                        <div class="col-md-12">
                           <label>Name</label>
-                           <input class="form-control"  id="name" name="name" type="text" placeholder="Enter Full name" required>
-                           
-                           <input id="pid" name="pid" type="text" value="<?php echo $_GET['id']; ?>" hidden >
+                           <input class="form-control"  id="name" name="name" value="' . $row["name"] . '" readonly type="text" placeholder="Enter Full name" required>
+                          
                        </div>
                        
                        
@@ -109,15 +127,29 @@ width: 100%; background-repeat: no-repeat;
                      <div class="form-group row">
                     <div class="col-md-6">
                          <label>Your Email</label>
-                           <input class="form-control"  id="email" name="email" type="text" placeholder="Enter Email" required>
+                           <input class="form-control"  id="email" value="' . $row["email"] . '" readonly name="email" type="text" placeholder="Enter Email" required>
                        </div>
                        
                         <div class="col-md-6">
                          <label>Your Phone</label>
-                           <input class="form-control"  id="phone" name="phone" type="text" placeholder="Enter Phone" required>
+                           <input class="form-control"  id="phone" name="phone" value="' . $row["phone"] . '" readonly type="text" placeholder="Enter Phone" required>
                        </div>
                        
                    </div>
+                   
+                   
+                     ';
+                    }
+                } else {
+                    echo "0 results";
+                }
+                $conn->close();
+
+                ?>
+                   
+                   
+                   
+                   
                    
                    <div class="form-group row">
                     <div class="col-md-6">
@@ -125,11 +157,52 @@ width: 100%; background-repeat: no-repeat;
                                     <br/>
                                     <input type="date" id="dat" name="dat" class="form-control" placeholder="Select Date" required>
                        </div>
-                       
-                        <div class="col-md-6">
-                         <label>Time</label>
-                           <input class="form-control"  id="tim" name="tim" type="number" placeholder="Enter Time 12:00" required>
+
                        </div>
+                       <div class="form-group row">
+                    <div class="col-md-6">
+                    <label for="dat" style="color:#9c9b9b;font-size:12px">Select Time</label>
+                        <!--<input type="time" class="form-control" name="time" required>-->
+                        <select class="form-control" id="tim" name="tim">
+                            <option>09:00</option>
+                            <option>10:00</option>
+                            <option>11:00</option>
+                            <option>12:00</option>
+                            <option>13:00</option>
+                            <option>14:00</option>
+                            <option>15:00</option>
+                            <option>16:00</option>
+                            <option>17:00</option>
+                            <option>18:00</option>
+                            <option>19:00</option>
+                            <option>20:00</option>
+                            <option>21:00</option>
+                            <option>22:00</option>
+                            <option>23:00</option>
+                        </select>
+                    </div>
+                    
+                     <div class="col-md-6">
+                    <label for="dat" style="color:#9c9b9b;font-size:12px">End Time</label>
+                        <!--<input type="time" class="form-control" name="time" required>-->
+                        <select class="form-control" id="etim" name="etime">
+                            <option>09:00</option>
+                            <option>10:00</option>
+                            <option>11:00</option>
+                            <option>12:00</option>
+                            <option>13:00</option>
+                            <option>14:00</option>
+                            <option>15:00</option>
+                            <option>16:00</option>
+                            <option>17:00</option>
+                            <option>18:00</option>
+                            <option>19:00</option>
+                            <option>20:00</option>
+                            <option>21:00</option>
+                            <option>22:00</option>
+                            <option>23:00</option>
+                        </select>
+                    </div>
                        
                    </div>
                    
@@ -211,7 +284,7 @@ width: 100%; background-repeat: no-repeat;
                                           
                                          <input style="margin-left:20px" type="radio" id="tot" checked name="tot" value="' . $row["p_hour"] . '">
                                         <label >Price/Hour &nbsp; &nbsp;' . $row["p_hour"] . '$</label><br>
-                                        <input style="margin-left:20px" type="radio" id="tot" name="tot" value="' . $row["p_month"] . '">
+                                        <input style="margin-left:20px" type="radio" id="tot2" name="tot" value="' . $row["p_month"] . '">
                                         <label  >Price/Month &nbsp;&nbsp; ' . $row["p_month"] . '$</label><br>
                                       
                                    
@@ -247,5 +320,65 @@ width: 100%; background-repeat: no-repeat;
  </form>
 </div>
 
+<div class="container-fluid" style="background-color:#f7f7f7">
+    <div class="row" style="margin-top:70px;margin-bottom:50px">
+        <div class="col-md-1">
+            
+           
+        </div>
+        
+         <div class="col-md-4">
+             
+             
+              <img src="images/loggg.jpeg"  style="height:40px"/>
+              <br/>
+              <br/>
+            
+            <p style="text-align:justify">
+            The parking experience of the future will offer absolute ease of access, autonomy and multiple options for drivers to select the service that really meets their needs, thus relieving the stress of parking. Tested on traffic sites and in all types of urban environments, Easypark is able to offer all of this, optimizing parking performance and profitability.
+                
+            </p>
+             
+           
+            
+        </div>
+        
+         <div class="col-md-3" style="padding-left:50px">
+             
+               <h3>Quick Links</h3>
+             <hr/>
+             
+             <a href="about.html">About Us</a>
+             <br/>  <br/>
+             <a href="register.html">Sign Up</a>
+              <br/>  <br/>
+             <a href="login.html">Log In</a>
+              <br/>  <br/>
+             <a href="help.html">Help Center</a>
+            
+        </div>
+        <div class="col-md-3" style="padding-left:50px">
+             
+               <h3>Contact with us</h3>
+             <hr/>
+             
+           
+                
+                <span class="glyphicon glyphicon-map-marker"></span> &nbsp; montreal, quebec -400104 <br>  <br/>
+                
+                <span class="glyphicon glyphicon-envelope"></span> &nbsp; easypark@gmail.com <br>
+                  <br/>
+                <span class="glyphicon glyphicon-earphone"></span> &nbsp; +438-456-7890 <br>  <br/>
+                
+                 
+            
+        </div>
+            <div class="col-md-1">
+            
+        </div>
+        
+    </div>
+    
+</div>
 </body>
 </html>
