@@ -48,15 +48,13 @@
       <img src="images/logo.webp"  style="height:60px;margin-top:10px"/>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li class="active" style="padding-top:15px"><a href="index.php">Home</a></li>
-     <li style="padding-top:15px"><a href="about.html">About</a></li>
-      <li style="padding-top:15px"><a href="help.html">Help</a></li>
-      <li style="padding-top:15px"><a href="how.html">How It Works</a></li>
-      <li style="padding-top:15px"><a href="contact.html">Contact</a></li>
-      <li ><a href="login.html"><button class="btn btn-danger navbar-btn"><span class="glyphicon glyphicon-log-in"></span> Login</button></a></li>
-      <li><a href="register.html"><button class="btn btn-danger navbar-btn"><span class="glyphicon glyphicon-user"></span> Sign Up</button></a></li>
+      <li class="active" style="padding-top:15px"><a href="home.php">Home</a></li>
+      <li style="padding-top:15px"><a href="parking.php">Parking</a></li>
+      <li style="padding-top:15px"><a href="mybookings.php">My Bookings</a></li>
+      <li style="padding-top:15px"><a href="myprofile.php">Profile</a></li>
+      <li ><a href="logout.php"><button class="btn btn-danger navbar-btn"><span class="glyphicon glyphicon-log-in"></span> Logout</button></a></li>
+  
     </ul>
-    
     
     
     
@@ -103,23 +101,26 @@ width: 100%; background-repeat: no-repeat;
                                     echo '
                                 
                               
-                              
-                               <div class="col-md-2">
+                           
+                               <div class="col-md-3">
                                
                               
                 
-                                   <a style="text-align:center" href="viewsparking.php?id='. $row['slid'] .'">
+                                   <a style="text-align:center" href="viewparking.php?id='. $row['slid'] .'">
+                                   <div class="jumbotron">
+                                   <img src="' . $row["image"] . '"  style="width:100%;height:300px" />
+                                   <h3 style="text-align:left">
                                    
                                    
                                    <button class="btn btn-default form-control">' . $row["name"] . '</button>
-                                  
-                                    
+                                   </h3>
+                                   </div>
                                   </a>
                                     
                                  
                               </div>
                                 
-                            
+                          
                                 ';
                                 }
                             } else {
@@ -133,8 +134,6 @@ width: 100%; background-repeat: no-repeat;
     </div>
  
  
-</div>
-
 </div>
 
 <div class="container-fluid" style="background-color:#f7f7f7">
